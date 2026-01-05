@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vorathel Agency</title>
+
+  <!-- Google Font (Safe CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="square-container">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+</div>
+
+<style>
+/* Full-screen overlay */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b3d0b; /* dark green brand color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Container for the squares */
+.square-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+/* The 4 small squares */
+.square-container .square {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #a7f3d0; /* light green */
+  top: 15px;
+  left: 15px;
+  animation: scatter 4s ease-in-out infinite;
+}
+
+/* Different delays so they don’t move in sync */
+.square-container .square:nth-child(1) { animation-delay: 0s; }
+.square-container .square:nth-child(2) { animation-delay: 0.1s; }
+.square-container .square:nth-child(3) { animation-delay: 0.2s; }
+.square-container .square:nth-child(4) { animation-delay: 0.3s; }
+
+/* Scatter animation */
+@keyframes scatter {
+  0%, 100% { transform: translate(0,0); }
+  25% { transform: translate(-30px,-30px); }
+  50% { transform: translate(30px,-30px); }
+  75% { transform: translate(30px,30px); }
+}
+</style>
+
+<script>
+  // // Wait X milliseconds, then fade out
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+
+  // How long the preloader stays visible (e.g., 5 seconds)
+  const displayTime = 5000; // in ms (change to 8000 for 8s, etc.)
+
+  setTimeout(() => {
+    preloader.style.opacity = 0; // fade out
+    setTimeout(() => {
+      preloader.style.display = 'none'; // remove from DOM
+    }, 1000); // match CSS transition duration
+  }, displayTime);
+});
+</script>
+
+
+
+  <!-- NAV -->
+<header class="navbar">
+  <img src="Vorathel2.png" alt="Vorathel Logo" class="logo" />
+
+  <div class="hamburger" id="hamburger">
+    <span class="bar bar1"></span>
+    <span class="bar bar2"></span>
+    <span class="bar bar3"></span>
+  </div>
+
+  <!-- Move mobile menu INSIDE navbar -->
+  <div id="mobile-menu">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#about" class="mobile-nav-link">About Us</a>
+    <a href="#why" class="mobile-nav-link">Our Services</a>
+        <a href="#services" class="mobile-nav-link">Why Choose us</a>
+            <a href="#testimonial" class="mobile-nav-link">Our Client's Voices</a>
+            
+          <a href="#faq" class="mobile-nav-link">FAQs</a>
+
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-btn">
+        <span>Solutions</span>
+        <span>↓</span>
+      </button>
+      <div class="mobile-dropdown-content">
+        <p>Web & App Development</p>
+        <p>Digital Marketing</p>
+        <p>AI for Business</p>
+         <p>Software engineering</p>
+        <p>Video Editing</p>
+         <p>Social Media Ads management</p>
+      </div>
+    </div>
+
+    <a href="#consultation" class="mobile-nav-link">Request a consultation</a>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">
+      <span class="pulse"></span>
+      THE FUTURE OF DIGITAL ENGINEERING
+    </div>
+
+    <h1 class="title"> VORATHEL
+      <span class="thin">—</span><br />
+      Engineering <br />
+      <span class="green">Digital</span><br />
+      <span class="green">Excellence</span>
+    </h1>
+
+    <p class="subtitle">
+      We build intelligent systems, high-performance websites,
+      and scalable digital solutions for businesses ready to grow.
+    </p>
+    
+    
+    <br>
+    <a href="https://wa.me/2347073743543?text=Hello%20Vorathel%20Agency" target="_blank" class="hero-btn">
+  Get Started
+</a>
+  </section>
+  
+  
+<section class="about-section" id="about">
+
+  <!-- Font (safe to include once in project) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <div class="about-container">
+
+    <!-- Badge -->
+    <div class="about-badge">
+      ABOUT VORATHEL
+    </div>
+
+    <!-- Heading -->
+    <h2 class="about-heading">
+      Our mission is simple:<br />
+      <span>Build intelligent systems that elevate businesses.</span>
+    </h2>
+
+    <!-- Description -->
+    <p class="about-text">
+      We're a team of engineers, designers, and strategists who believe in the power of
+      technology to transform industries. From AI-driven automation to scalable web platforms,
+      we craft solutions that drive real growth.
+    </p>
+
+    <!-- Counters -->
+    <div class="counters">
+      <div class="counter-box">
+        <div class="counter" data-target="98" data-suffix="%">0</div>
+        <p>CLIENT SATISFACTION</p>
+      </div>
+
+      <div class="counter-box">
+        <div class="counter" data-target="60" data-suffix="+">0</div>
+        <p>PROJECTS DELIVERED</p>
+      </div>
+
+      <div class="counter-box">
+        <div class="counter" data-target="24" data-suffix="/7">0</div>
+        <p>SUPPORT AVAILABLE</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="services" class="services">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+  <div class="services-wrapper">
+
+    <div class="services-header">
+      <span class="badge">OUR SERVICES</span>
+      <h2>What We Build</h2>
+      <p>
+        Empowering businesses with innovative digital solutions, creative designs,
+        and intelligent tools to thrive in a competitive world.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:web"></span>
+        </div>
+        <h3>Web & App Development</h3>
+        <p>
+          Building responsive websites and mobile apps with modern technologies
+          for seamless user experiences.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:application"></span>
+        </div>
+        <h3>Software Development</h3>
+        <p>
+          Creating robust and scalable software solutions tailored to your business
+          needs and goals.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:palette"></span>
+        </div>
+        <h3>Graphics & Brand Designing</h3>
+        <p>
+          Crafting unique brand identities, logos, and creative visuals that leave
+          a lasting impression.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:video"></span>
+        </div>
+        <h3>Video Editing / Motion Graphics</h3>
+        <p>
+          Producing high-quality videos and motion graphics that engage audiences
+          and elevate your content.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:bullhorn"></span>
+        </div>
+        <h3>Digital Marketing</h3>
+        <p>
+          Driving growth and visibility with tailored marketing strategies,
+          SEO, and campaigns that convert.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:account-group"></span>
+        </div>
+        <h3>Social Media Management</h3>
+        <p>
+          Managing and growing your social platforms with engaging content,
+          strategy, and analytics.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="service-card">
+        <div class="icon-box">
+          <span class="iconify" data-icon="mdi:robot"></span>
+        </div>
+        <h3>AI Business Tools</h3>
+        <p>
+          Intelligent automation and AI solutions to optimize business processes
+          and boost productivity.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="why">
+  <div class="why-overlay"></div>
+
+  <div class="why-container">
+    <div class="why-header">
+      <span class="why-badge">Why Choose Us</span>
+      <h2>Why Choose <span>VORATHEL</span></h2>
+      <p>
+        We combine technical excellence with strategic thinking to deliver results that matter.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-gear"></i></div>
+        <h3>Precision Engineering</h3>
+        <p>Every line of code and design decision is crafted with meticulous attention to detail.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Scalable Solutions</h3>
+        <p>Built to grow with your business, from startup to enterprise scale.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Data-Driven Decisions</h3>
+        <p>Analytics and insights that inform every strategic move.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Client-Centered Design</h3>
+        <p>Your vision, goals, and success always come first.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>Rapid Execution</h3>
+        <p>Fast delivery without compromising quality or precision.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-paintbrush"></i></div>
+        <h3>Clean & Modern Designs</h3>
+        <p>Elegant, modern interfaces crafted to stand out.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+        <h3>Premium Value</h3>
+        <p>High-quality solutions that maximize your investment.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Results-Driven Approach</h3>
+        <p>Focused strategies that deliver measurable outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonial">
+  <div class="testimonial-bg"></div>
+
+  <!-- Header -->
+  <div class="testimonial-header">
+    <span class="testimonial-badge">Client Voices</span>
+    <h3>Our Success Stories</h3>
+  </div>
+
+  <!-- Scroll Area -->
+  <div class="testimonial-scroll-wrapper">
+    <div id="testimonial-scroll" class="testimonial-track">
+
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <p>
+          “Working with Vorathel felt like partnering with an in-house team. Their software solution didn’t just work — it elevated how we operate. The attention to detail was honestly refreshing."
+        </p>
+        <span>– David Eniagbala <br>CEO, Dennytech digital academy</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <p>
+          "Their digital marketing strategy wasn’t loud — it was intelligent. We saw real engagement, real conversions, and a brand presence that finally felt intentional."
+        </p>
+        <span>– Stephanie Nguyen <br>Marketing Lead – Orbit Media</span>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testimonial-card">
+        <p>
+          "Vorathel doesn’t just build — they think. Every decision was backed by logic, experience, and care. This is rare in today’s tech space"
+        </p>
+        <span>– Samuel Adeyemi <br> CEO – GrowthHive</span>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="testimonial-card">
+        <p>
+          "For about a year now, I've had business with their Brand design services and to be very honest, I've not had issues of any sort, lookinh forward to explore other services of theirs"
+        </p>
+        <span>– Engr Ayodeji Akinlolu<br>CEO, Engr Ayodeji Consults</span>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="testimonial-card">
+        <p>
+          "From web development to AI visual editing, Vorathel delivered clarity where others delivered confusion. And the pricing? Shockingly fair for this level of execution.”
+        </p>
+        <span>– Senior healthcare officer <br> Mubocare Surrogacy</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Drag Indicator -->
+  <div class="drag-indicator">
+    <div class="arrow">⇆</div>
+    <p>Drag to scroll</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="faq-container">
+
+    <!-- HEADER -->
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about Vorathel’s services.</p>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="faq-card dark">
+      <button class="faq-button">
+        <span>1. What services does Vorathel offer?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Vorathel delivers end-to-end digital solutions including web and software engineering,
+          brand identity systems, visual communication, product design, and digital media production.
+          We work with businesses looking to build credibility, scale operations, and dominate digitally.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-card light">
+      <button class="faq-button">
+        <span>2. Who is Vorathel best suited for?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          We work best with startups, growing businesses, founders, organizations, and brands that value
+          quality, structure, and long-term growth over quick fixes or generic solutions.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-card dark">
+      <button class="faq-button">
+        <span>3. How does your process work?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Our process is structured into discovery, strategy, design, development, testing, and deployment.
+          Every project begins with understanding your business goals before translating them into a scalable
+          digital solution.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-card light">
+      <button class="faq-button">
+        <span>4. How much do your services cost?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Pricing depends on project scope, complexity, timelines, and required deliverables.
+          We do not offer one-size-fits-all pricing. After an initial consultation, we provide
+          a custom proposal aligned with your goals and budget.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-card dark">
+      <button class="faq-button">
+        <span>5. Do you offer fixed packages or custom pricing?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          We primarily work on custom pricing to ensure every client receives solutions tailored to their needs.
+          However, select services may have baseline starting prices depending on project type.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="faq-card light">
+      <button class="faq-button">
+        <span>6. How long does a typical project take?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Project timelines vary based on scope.<br><br>
+          • Brand and visual systems: 1–3 weeks<br>
+          • Websites and platforms: 2–6 weeks<br>
+          • Larger digital infrastructures: project-dependent<br><br>
+          Timelines are always agreed upon before work begins.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="faq-card dark">
+      <button class="faq-button">
+        <span>7. Can Vorathel handle long-term or ongoing projects?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Absolutely. We offer retainer-based and long-term partnerships for brands that require continuous
+          design, development, or digital support.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 8 -->
+    <div class="faq-card light">
+      <button class="faq-button">
+        <span>8. Do you provide revisions after delivery?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Yes. Each project includes a defined number of revisions depending on scope.
+          Additional revisions or extended support can be arranged if needed.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ 9 -->
+    <div class="faq-card dark">
+      <button class="faq-button">
+        <span>9. How do I get started with Vorathel?</span>
+        <svg fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="faq-content">
+        <p>
+          Simply contact us via the “Get started” button on our website, via email
+          <strong>vorathelagency@gmail.com</strong>, or direct media handles.
+          We’ll schedule a discovery session, assess your needs, and guide you through the next steps.
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <p class="faq-footer">
+      Still have questions? Let’s discuss your project and create a solution tailored to your goals.
+    </p>
+
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+
+    <h2 class="contact-title">Request a Consultation</h2>
+    <p class="contact-subtitle">Fill out the form and we'll contact you shortly.</p>
+
+    <!-- FormSubmit Integration -->
+    <form id="contactForm" class="contact-form" method="POST">
+
+      <!-- Hidden inputs for FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#">
+
+      <div class="form-group slide-left">
+        <input type="text" name="name" id="name" required>
+        <label for="name">Full Name / Business Name</label>
+      </div>
+
+      <div class="form-group slide-right">
+        <input type="email" name="email" id="email" required>
+        <label for="email">Business Email</label>
+      </div>
+
+      <div class="form-group slide-up">
+        <input type="tel" name="phone" id="phone" required>
+        <label for="phone">Business Phone Number</label>
+      </div>
+
+      <div class="form-group slide-left">
+        <select name="services" id="services" required>
+          <option value="">Select Service Needed</option>
+          <option value="web-app">Web & App Development</option>
+          <option value="software">Software Development</option>
+          <option value="graphics">Graphics & Brand Designing</option>
+          <option value="video">Video Editing / Motion Graphics</option>
+          <option value="digital-marketing">Digital Marketing</option>
+          <option value="social-media">Social Media Management</option>
+          <option value="ai-business">AI for Business</option>
+        </select>
+        <label for="services">Service Needed</label>
+      </div>
+
+      <div class="form-group slide-left">
+        <select name="contact_method" id="contact_method" required>
+          <option value="">Select Preferred Contact Method</option>
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+          <option value="whatsapp">WhatsApp</option>
+        </select>
+        <label for="contact_method">Preferred Contact Method</label>
+      </div>
+
+      <button type="submit" class="submit-btn slide-up">Submit</button>
+    </form>
+
+  </div>
+
+  <!-- Success / Error Popup -->
+  <div id="formPopup" class="form-success">
+    <p id="formPopupText">Thank you! We will contact you shortly.</p>
+    <div class="progress-bar"></div>
+  </div>
+</section>
+
+<style>
+/* Popup styling */
+.form-success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: darkgreen;
+  color: #A7F3D0;
+  padding: 15px 30px;
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+  height: 3px;
+  width: 0%;
+  background-color: #A7F3D0;
+  border-radius: 3px;
+  margin-top: 5px;
+  transition: width 5s linear;
+}
+</style>
+
+
+
+
+<section class="cta-section">
+  <div class="cta-container">
+    <h1 class="cta-title">Let's Build Something Big.</h1>
+    <p class="cta-subtitle">
+      Ready to transform your business with intelligent technology? Let's talk.
+    </p>
+    <a href="https://wa.me/2347073743543?text=Hello%20Vorathel%20Agency" target="_blank" class="cta-btn">
+      Work With Vorathel <span class="cta-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<section class="footer">
+  <div class="footer-container">
+
+    <!-- Logo + Socials -->
+    <div class="footer-logo-social">
+      <img src="Vorathel2.png" alt="Vorathel Logo" class="footer-logo" />
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/1DBWLWBDj4/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/vorathelagency" aria-label="X"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@vorathel_agency" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/vorathel_agency" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Footer Dropdowns -->
+    <div class="footer-dropdowns">
+
+      <div class="footer-dropdown">
+        <button class="footer-dropdown-btn" onclick="toggleDropdown(this)">Services <span class="arrow">▼</span></button>
+        <ul class="footer-dropdown-content">
+          <li>Web Development</li>
+          <li>Software Development</li>
+          <li>UI/UX & Product Design</li>
+          <li>Graphics & Brand Identity</li>
+          <li>Video Editing & Motion Design</li>
+          <li>Business Automation</li>
+        </ul>
+      </div>
+
+      <div class="footer-dropdown">
+        <button class="footer-dropdown-btn" onclick="toggleDropdown(this)">Solutions <span class="arrow">▼</span></button>
+        <ul class="footer-dropdown-content">
+          <li>For Startups</li>
+          <li>For Businesses & SMEs</li>
+          <li>For Personal Brands</li>
+          <li>For Institutions & Organizations</li>
+        </ul>
+      </div>
+
+      <div class="footer-dropdown">
+        <button class="footer-dropdown-btn" onclick="toggleDropdown(this)">Technology <span class="arrow">▼</span></button>
+        <ul class="footer-dropdown-content">
+          <li>Our Tech Stack</li>
+          <li>Development Process</li>
+          <li>Performance & Scalability</li>
+          <li>Security & Reliability</li>
+        </ul>
+      </div>
+
+      <div class="footer-dropdown">
+        <button class="footer-dropdown-btn" onclick="toggleDropdown(this)">Company <span class="arrow">▼</span></button>
+        <ul class="footer-dropdown-content">
+          <li>About Vorathel</li>
+          <li>Our Mission</li>
+          <li>Our Vision</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="footer-dropdown">
+        <button class="footer-dropdown-btn" onclick="toggleDropdown(this)">Resources <span class="arrow">▼</span></button>
+        <ul class="footer-dropdown-content">
+          <li>Blog / Insights</li>
+          <li>Design & Development Tips</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Vorathel. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <span>•</span>
+        <a href="#">Terms</a>
+        <span>•</span>
+        <a href="#">Cookie Preferences</a>
+        <span>•</span>
+        <a href="#">Code of Conduct</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float">
+  <a
+    href="https://wa.me/2347073743543?text=Hello%20Vorathel%20Agency"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <div class="whatsapp-popup" id="whatsappPopup">
+    Chat with us for more info >>>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+  
+<script>
+  (function () {
+    const popup = document.getElementById("whatsappPopup");
+    if (!popup) return;
+
+    function showPopup() {
+      popup.classList.add("show");
+
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 5000); // visible for 5s
+    }
+
+    showPopup();
+
+    setInterval(() => {
+      showPopup();
+    }, 9000); // 5s visible + 4s hidden
+  })();
+</script>
+
+
+</body>
+</html>
