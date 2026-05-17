@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 // ── Middleware ────────────────────────────────
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set(trusy proxy', 1)
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*', // set your domain in .env
   methods: ['POST', 'GET'],
@@ -33,7 +34,9 @@ const limiter = rateLimit({
 
 // ── Nodemailer Transporter ────────────────────
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.GMAIL_USER, // vorathelagency@gmail.com
     pass: process.env.GMAIL_PASS, // Gmail App Password (NOT your real password)
