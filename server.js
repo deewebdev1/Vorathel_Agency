@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 // ── Middleware ────────────────────────────────
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set(trusy proxy', 1)
+app.set('trust proxy', 1)
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*', // set your domain in .env
   methods: ['POST', 'GET'],
